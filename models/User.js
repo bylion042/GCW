@@ -8,5 +8,5 @@ const UserSchema = new mongoose.Schema({
     termsAccepted: { type: Boolean, required: true }, // Stores checkbox value
     createdAt: { type: Date, default: Date.now }
 });
-
-module.exports = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
+module.exports = User 

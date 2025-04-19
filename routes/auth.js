@@ -1,6 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
-const User = require('../models/user'); // Import User model
+const User = require('../models/User'); // Import User model
 const router = express.Router();
 
 // Register Route
