@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: #696fdd;
+    --secondary-color-dark: #a3a8f0;
+    --text-light: #b7b9bc;
+    --white: #ffffff;
+    --max-width: 1300px;
+    --background-gradient: linear-gradient(135deg,
+            rgb(186, 190, 253) 0%,
+            rgb(66, 71, 158) 100%);
+    --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+
+
+.draggable-image{
+    display: none;
+}
+
+
+
+
+.settings-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color-light);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: right 0.4s ease-in-out;
+    z-index: 2000;
+    overflow-y: auto;
+  }
+  
+  .settings-panel.open {
+    right: 0;
+  }
+  
+  .settings-content {
+    padding: 3rem 1rem;
+  }
+  
+  .close-settings {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: background 0.3s, transform 0.3s ease;
+  }
+  
+  .close-settings:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+  }
+  
+  
+  .icons a {
+    color: var(--white);
+    text-decoration: none;
+  }
+  
+  .icons i {
+    font-size: 19px;
+  }
+  
+  .icons .styled {
+    display: flex;
+    justify-content: end;
+    background: var(--primary-color-extra-light);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(186, 190, 253, 0.4);
+  }
+
+.setting-content {
+    padding: 20px 10px;
+}
+
+.setting-content a {
+    text-decoration: none;
+    color: var(--white);
+    margin-left: 1rem;
+    margin-top: 5rem;
+    font-size: 15px;
+    background: var(--background-gradient);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(186, 190, 253, 0.4);
+    animation: bounceActive 0.3s ease;
+}
+
+.settings-container {
+    width: 100%;
+    margin: auto;
+}
+
+.settings-header {
+    text-align: center;
+    font-size: 1.20rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: var(--white);
+}
+
+.setting-item1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    font-size: 1rem;
+}
+
+.setting-label {
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--secondary-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(18px);
+}
+
+.currency-select {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.about-value {
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+.delete-account {
+    color: #ff5c5c;
+    text-align: left;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    width: 90%;
+    margin: 20px auto;
+    display: block;
+    background: var(--background-gradient);
+    color: var(--white);
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: var(--background2);
+}
+
+
+/* BACKGROUND BLUR */
+.bg__blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px var(--secondary-color);
+    z-index: -1;
+    position: fixed;
+}
+
+.footer__blur {
+    bottom: 7rem;
+    right: 0;
+}

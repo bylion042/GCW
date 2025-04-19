@@ -1,0 +1,185 @@
+<div class="account1">
+
+    <div class="account-card">
+        <div class="card-header">
+            <h3>Available Balance</h3>
+            <div class="setting-item">
+                <!-- <label for="currency-select">Select Currency</label> -->
+                <select class="currency-select" id="currency-select">
+                    <option value="USD" selected>USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="KES">KES</option>
+                    <option value="CAD">CAD</option>
+                    <option value="NGN">NGN</option>
+                    <option value="AUD">AUD</option>
+                    <option value="GHS">GHS</option>
+                    <option value="ZAR">ZAR</option>
+                    <option value="INR">INR</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CNY">CNY</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="points">
+            <h1 id="balance">$3.00</h1>
+            <p class="ngn">≈ 50.00 Points</p>
+            <p class="bonus">Bonus Points <span>50 Points</span></p>
+        </div>
+
+        <div class="card-actions">
+            <button class="withdraw-btn" onclick="showAccessMessage('withdraw-message')">
+                <i class="ri-bank-fill"></i> Withdraw
+            </button>
+
+            <button class="pay-btn" onclick="showAccessMessage('pay-message')">
+                <i class="ri-wallet-3-fill"></i> Pay Bills
+                <span class="new-badge">Due</span>
+            </button>
+        </div>
+
+        <!-- Popups -->
+        <div id="withdraw-message" class="access-popup">
+            <p>Dear <%= user.name %>, Your welcome bonus balance and points will become withdrawable after you sell at least one
+                    gift card to us. Your points will start counting (100 points = $1).</p>
+        </div>
+
+        <div id="pay-message" class="access-popup">
+            <p>Dear <%= user.name %>, This feature is not accessible until you sell at least one gift card to us.</p>
+        </div>
+    </div>
+
+
+    <div class="social-rewards">
+        <div class="header">
+            <p>Earn Rewards by Completing Simple Tasks!</p>
+        </div>
+
+        <div class="slider-container">
+            <div class="platforms-wrapper" id="platformsWrapper">
+                <!-- Slide 1 -->
+                <div class="platforms">
+                    <div class="platforms">
+                        <div class="platform"><span class="coin">+100</span><i
+                                class="ri-xbox-fill"></i><button>Sell</button></div>
+                        <div class="platform"><span class="coin">+50</span><i
+                                class="ri-facebook-fill"></i><button>Follow</button></div>
+                        <div class="platform"><span class="coin">+100</span><i
+                                class="ri-apple-fill"></i><button>Sell</button></div>
+                        <div class="platform"><span class="coin">+50</span><i
+                                class="ri-twitter-fill"></i><button>Follow</button></div>
+                        <div class="platform"><span class="coin">+100</span><i
+                                class="ri-amazon-fill"></i><button>Sell</button></div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="platforms">
+                    <div class="platforms">
+                        <div class="platform"><span class="coin">+50</span><i
+                                class="ri-tiktok-fill"></i><button>Follow</button></div>
+                        <div class="platform"><span class="coin">+100</span><i
+                                class="ri-discord-fill"></i><button>Sell</button></div>
+                        <div class="platform"><span class="coin">+50</span><i
+                                class="ri-instagram-fill"></i><button>Follow</button></div>
+                        <div class="platform"><span class="coin">+50</span><i
+                                class="ri-youtube-fill"></i><button>Follow</button></div>
+                        <div class="platform"><span class="coin">+100</span><i
+                                class="ri-steam-fill"></i><button>Sell</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-indicators">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- FUCTION TO SLIDE TASK  -->
+<script>
+    function goToSlide(index) {
+        const wrapper = document.getElementById('platformsWrapper');
+        const slideWidth = wrapper.querySelector('.platforms').offsetWidth;
+        wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+
+        // update active dot
+        const dots = document.querySelectorAll('.slider-indicators .dot');
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+</script>
+
+
+<!-- FUCTION TO POP UP MESSAGES  -->
+<script>
+    function showAccessMessage(id) {
+        // Hide any currently visible popup
+        document.querySelectorAll('.access-popup').forEach(popup => {
+            popup.classList.remove('show');
+        });
+
+        // Show the correct popup
+        const target = document.getElementById(id);
+        if (target) {
+            target.classList.add('show');
+            setTimeout(() => {
+                target.classList.remove('show');
+            }, 6000); // Hide after 6 seconds
+        }
+    }
+</script>
+
+
+<!-- FUNCTION TO CHANGE THE RATE OF THE AVAILABLE BALANCE -->
+<script>
+    const currentUser = "<%= user.email %>"; // or _id
+  
+    const balanceUSD = 3.00;
+    const currencySelect = document.getElementById('currency-select');
+    const balanceEl = document.getElementById('balance');
+  
+    async function updateBalanceCurrency() {
+        const selectedCurrency = currencySelect.value;
+        balanceEl.innerHTML = `<span class="spinner"></span> converting...`;
+  
+        try {
+            const response = await fetch('https://v6.exchangerate-api.com/v6/43d7d7fb9abf1529254bd3cf/latest/USD');
+            const data = await response.json();
+            const conversionRate = data.conversion_rates[selectedCurrency];
+  
+            const convertedBalance = balanceUSD * conversionRate;
+  
+            const formattedBalance = convertedBalance.toLocaleString('en-US', {
+                style: 'currency',
+                currency: selectedCurrency,
+                minimumFractionDigits: 2,
+            });
+  
+            balanceEl.innerText = formattedBalance;
+  
+        } catch (error) {
+            balanceEl.innerText = "Error.";
+            console.error(error);
+        }
+    }
+  
+    currencySelect.addEventListener('change', function () {
+        localStorage.setItem(`selectedCurrency-${currentUser}`, currencySelect.value);
+        updateBalanceCurrency();
+    });
+  
+    window.addEventListener('load', function () {
+        const savedCurrency = localStorage.getItem(`selectedCurrency-${currentUser}`);
+        if (savedCurrency) {
+            currencySelect.value = savedCurrency;
+        }
+        updateBalanceCurrency();
+    });
+  </script>
+  

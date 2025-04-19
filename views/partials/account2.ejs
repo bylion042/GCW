@@ -1,0 +1,106 @@
+<div class="account2">
+
+    <div class="referral-container">
+        <div class="referral-header">
+            <div>
+                <p class="refer-title">Refer & Earn Rewards!</p>
+                <p class="refer-sub">Your Referral Link</p>
+            </div>
+            <a href="#" class="my-referral"><i class="ri-links-line"></i> My Referral</a>
+        </div>
+
+        <div class="referral-link-box">
+            <input type="text" id="referralInput" readonly value="http://localhost:3000/ref/<%= user.name %>" />
+
+            <div class="referral-actions">
+                <button class="share-btn"><i class="ri-share-line"></i> Share</button>
+                <button class="copy-btn"><i class="ri-file-copy-line"></i> Copy</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="transactions">
+        <div class="trans-header">
+            <h3>Transaction Records!</h3>
+        </div>
+
+        <div class="trans-item">
+            <div class="trans-icon"><i class="ri-file-list-3-line"></i></div>
+            <div class="trans-details">
+                <p class="trans-title">New user reward</p>
+                <p class="trans-date">
+                    <%= registrationDate %>
+                </p>
+
+            </div>
+            <div class="trans-points">3.00 USD</div>
+        </div>
+
+        <div class="trans-item">
+            <div class="trans-icon"><i class="ri-file-list-3-line"></i></div>
+            <div class="trans-details">
+                <p class="trans-title">New user Bonus points</p>
+                <p class="trans-date">
+                    <%= registrationDate %>
+                </p>
+            </div>
+            <div class="trans-points">50.00 Points</div>
+        </div>
+
+        <div class="trans-item">
+            <div class="trans-icon"><i class="ri-file-list-3-line"></i></div>
+            <div class="trans-details">
+                <p class="trans-title">New user points</p>
+                <p class="trans-date">
+                    <%= registrationDate %>
+                </p>
+            </div>
+            <div class="trans-points">50.00 Points</div>
+        </div>
+
+        <div class="no-data">No more data</div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<!-- FUNCTION FOR COPY BTN AND SHEAR BTN  -->
+<script>
+    // Copy to clipboard
+    document.querySelector('.copy-btn').addEventListener('click', () => {
+    const input = document.getElementById('referralInput');
+    navigator.clipboard.writeText(input.value).then(() => {
+        // Change button text to 'Copied!'
+        const button = document.querySelector('.copy-btn');
+        button.textContent = 'Copied!';
+
+        // Optionally, reset the text back to "Copy" after a delay (e.g., 2 seconds)
+        setTimeout(() => {
+            button.textContent = 'Copy';
+        }, 2000);
+    });
+});
+
+
+    // Share using Web Share API (mobile-friendly)
+    document.querySelector('.share-btn').addEventListener('click', () => {
+        const link = document.getElementById('referralInput').value;
+
+        if (navigator.share) {
+            navigator.share({
+                title: 'Join me on GiftCardWave!',
+                text: 'Use my referral link:',
+                url: link
+            }).catch(err => console.error("Share failed:", err));
+        } else {
+            alert("Sharing not supported. Please copy the link instead.");
+        }
+    });
+</script>

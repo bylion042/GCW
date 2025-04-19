@@ -1,0 +1,477 @@
+<div class="active-buyers">
+
+
+    <div class="gift-card-list" id="brand-filter">
+        <span class="filter-btn active" data-brand="Active Deals">Active Deals <i class="ri-arrow-right-s-fill"></i></span>
+        <span class="filter-btn" data-brand="Razer">Razer</span>
+        <span class="filter-btn" data-brand="Apple&iTunes">Apple&iTunes</span>
+        <span class="filter-btn" data-brand="Steam">Steam</span>
+        <span class="filter-btn" data-brand="Google">Google</span>
+        <span class="filter-btn" data-brand="Xbox">Xbox</span>
+        <span class="filter-btn" data-brand="Vanilla">Vanilla</span>
+        <span class="filter-btn" data-brand="Amazon">Amazon</span>
+        <span class="filter-btn" data-brand="AMEX">AMEX</span>
+        <span class="filter-btn" data-brand="Mastercard">Mastercard</span>
+        <span class="filter-btn" data-brand="Nordstrom">Nordstrom</span>
+        <span class="filter-btn" data-brand="eBay">eBay</span>
+        <span class="filter-btn" data-brand="Nike">Nike</span>
+        <span class="filter-btn" data-brand="PayStation">PayStation</span>
+        <span class="filter-btn" data-brand="Netspend">Netspend</span>
+        <span class="filter-btn" data-brand="GameStop">GameStop</span>
+        <span class="filter-btn" data-brand="Paysafecard">Paysafecard</span>
+        <span class="filter-btn" data-brand="Moneycard">Moneycard</span>
+        <span class="filter-btn" data-brand="Walmart">Walmart</span>
+        <span class="filter-btn" data-brand="BestBuy">BestBuy</span>
+        <span class="filter-btn" data-brand="CVS">CVS</span>
+        <span class="filter-btn" data-brand="Roblox">Roblox</span>
+        <span class="filter-btn" data-brand="Macy's">Macy's</span>
+        <span class="filter-btn" data-brand="Footlocker">Footlocker</span>
+        <span class="filter-btn" data-brand="VISA">VISA</span>
+        <span class="filter-btn" data-brand="Sephora">Sephora</span>
+        <span class="filter-btn" data-brand="WalmartMoneyCard">WalmartMoneyCard</span>
+    </div>
+
+
+
+
+
+    <!-- Add a simple spinner -->
+    <div id="loading-spinner" class="loading-spinner" style="display: none;">
+        <div class="loader"></div>
+        <p>Loading ...</p>
+    </div>
+
+
+
+
+
+    <div class="offer-list-scroll" id="offer-list">
+        <!-- USER 1  -->
+        <div class="offer-card" data-brand="Amazon Razer Steam Apple&iTunes Google VISA Sephora AMEX Mastercard">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user4.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Li Na (李娜) <span class="verified"><i class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>934,761</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +1022</span></div>
+                </div>
+                <div class="limits">Unlimited</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+
+        <!-- USER 2  -->
+        <div class="offer-card" data-brand="Macy's Footlocker Xbox Vanilla Nordstrom eBay">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user16.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Daniel Thompson <span class="verified"><i
+                                class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>583,635</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +822</span></div>
+                </div>
+                <div class="limits">Limits 10 - 1000</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+        <!-- USER 3  -->
+        <div class="offer-card" data-brand="Amazon CVS Roblox AMEX Mastercard Nike PayStation Xbox Vanilla">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user14.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Liu Ning (刘宁) <span class="verified"><i class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>128,920</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +512</span></div>
+                </div>
+                <div class="limits">Limits 10 - 1000</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+        <!-- USER 4  -->
+        
+        <div class="offer-card" data-brand="Xbox Vanilla WalmartMoneyCard Macy's Footlocker">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user18.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Victoria Robinson <span class="verified"><i
+                                class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>15,010</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +622</span></div>
+                </div>
+                <div class="limits">Unlimited</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+        <!-- USER 5  -->
+        <div class="offer-card" data-brand="Paysafecard Moneycard Nike PayStation Paysafecard Moneycard">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user19.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Isabella Garcia <span class="verified"><i
+                                class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>938,262</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +2422</span></div>
+                </div>
+                <div class="limits">Limits 10 - 1000</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+        <!-- USER 6  -->
+        <div class="offer-card" data-brand="Netspend GameStop Paysafecard Moneycard Walmart BestBuy">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user17.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Samuel Richardson <span class="verified"><i
+                                class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>92,625</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +222</span></div>
+                </div>
+                <div class="limits">Unlimited</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+        <!-- USER 7  -->
+        <div class="offer-card"
+            data-brand="Amazon Nike PayStation Netspend Razer Steam Apple&iTunes Google GameStop CVS Roblox">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user8.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Charlotte Davis <span class="verified"><i
+                                class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>35,647</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +420</span></div>
+                </div>
+                <div class="limits">Limits 10 - 1000</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+        <!-- USER 8  -->
+        <div class="offer-card" data-brand="Nordstrom eBay Walmart BestBuy Macy's Footlocker">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user15.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Christopher Foster <span class="verified"><i
+                                class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>16,368</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +322</span></div>
+                </div>
+                <div class="limits">Limits 10 - 1000</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+        <!-- USER 9  -->
+        <div class="offer-card"
+            data-brand="Amazon AMEX Mastercard Razer Steam Apple&iTunes Google CVS Roblox VISA Sephora">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user21.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Morgan Foster <span class="verified"><i class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>118,376</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +765</span></div>
+                </div>
+                <div class="limits">Limits 10 - 1000</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+        <!-- USER 10  -->
+        <div class="offer-card"
+            data-brand="Amazon Walmart BestBuy Nordstrom eBay Netspend GameStop Razer Steam Apple&iTunes Google WalmartMoneyCard">
+            <div class="offer-header">
+                <div class="profile-img-wrapper">
+                    <img src="/images/user20.jpeg" alt="User" class="profile-img">
+                    <span class="active-dot"></span>
+                </div>
+                <div class="user-info">
+                    <div class="username">Li Na (李娜) <span class="verified"><i class="ri-vip-crown-line"></i></span>
+                    </div>
+                    <div class="grade-info">Trade <strong>506,482</strong> <span class="positive"><i
+                                class="ri-thumb-up-fill"></i> +3302</span></div>
+                </div>
+                <div class="limits">Unlimited</div>
+            </div>
+
+            <div class="offer-main">
+                <div class="price-info">
+                    <div class="price balance">$0.02</div>
+                    <div class="rate"><i class="ri-arrow-right-up-fill"></i> 73.02</div>
+                    <span class="badge">Bronze VIP</span>
+                </div>
+
+                <div class="time">
+                    <i class="ri-time-line"></i>
+                    <span class="current-time">--:--</span>
+                </div>
+            </div>
+
+            <div class="coupon">
+                <span class="coupon-badge"><i class="ri-ticket-line"></i> Bonus Coupon Upto +10%</span>
+                <span class="expiry">Expiring in 3 days</span>
+            </div>
+
+            <div class="offer-footer">
+                <span class="tag">Physical or E-code</span>
+                <span class="tag">Fast and reliable</span>
+                <a href="/sell"><button class="sell-btn">Sell</button></a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Gift Card Rate</title>
+    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/admin-nav.css">
+    <link rel="stylesheet" href="/css/update-rate.css">
+</head>
+
+<body>
+    <h2>Update Gift Card Rate</h2>
+
+    <form action="/update-rate" method="POST" onsubmit="showPopup(event)">
+        <label for="brand">Gift Card Brand</label>
+        <select name="brand" required>
+            <% brands.forEach(brand=> { %>
+                <option value="<%= brand %>">
+                    <%= brand.charAt(0).toUpperCase() + brand.slice(1) %>
+                </option>
+                <% }) %>
+        </select>
+
+        <label for="rateUSD">New Rate in USD</label>
+        <input type="number" name="rateUSD" required placeholder="1000"/>
+
+        <button type="submit">Update Rate</button>
+    </form>
+
+    <div class="popup" id="successPopup">Rate updated successfully!</div>
+
+
+    <%- include ('partials/admin-nav') %>
+
+
+
+
+    <script>
+        function showPopup(e) {
+            e.preventDefault();
+            const form = e.target;
+            fetch(form.action, {
+                method: 'POST',
+                body: new URLSearchParams(new FormData(form))
+            })
+                .then(res => {
+                    if (res.ok) {
+                        const popup = document.getElementById('successPopup');
+                        popup.style.display = 'block';
+                        setTimeout(() => {
+                            popup.style.display = 'none';
+                        }, 3000);
+                        form.reset();
+                    }
+                });
+        }
+    </script>
+
+    <!-- FOR MY MANIFEST  -->
+    <script src="/js/scripts.js"></script>
+</body>
+</html>

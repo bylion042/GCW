@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gift Card Wave</h1>
+        <p>Sign in now to start trading!</p>
+
+        <form action="/auth/login" method="POST">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="giftcard@example.com" required>
+
+            <label for="password">Password</label>
+            <div class="input-container">
+                <input type="password" id="password" name="password" required placeholder="password">
+                <i class="ri-eye-off-line toggle-password" onclick="togglePassword('password', this)"></i>
+            </div>
+
+            <button type="submit" class="btn">Log in</button>
+            <br>
+        </form>
+
+        <p>New on our platform? <a href="/register">Create an account</a></p>
+        <a href="/" class="back-link"><i class="ri-arrow-left-line"></i> Back to Home</a>
+
+        <!-- BACKGROUND BLUR -->
+        <span class="bg__blur"></span>
+        <span class="bg__blur footer__blur"></span>
+    </div>
+
+    <!-- Password toggle -->
+    <script>
+        function togglePassword(fieldId, icon) {
+            let input = document.getElementById(fieldId);
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.replace("ri-eye-off-line", "ri-eye-line");
+            } else {
+                input.type = "password";
+                icon.classList.replace("ri-eye-line", "ri-eye-off-line");
+            }
+        }
+    </script>
+
+
+
+<!-- Toastify Script -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<% if (typeof message !== 'undefined') { %> 
+    <script>
+        Toastify({
+            text: "<%= message %>",
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "<%= messageType === 'error' ? 'red' : 'green' %>",
+            close: true
+        }).showToast();
+    </script>
+<% } %>
+
+
+<!-- FOR MY MANIFEST  -->
+<script src="/js/scripts.js"></script>  
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!-- NAV FOR SMALL SCREEN  -->
+<div id="loading-spinner" class="loading-spinner" style="display: none;">
+    <div class="loader"></div>
+</div>
+
+
+<div class="small-screen-nav">
+    <div class="link-container">
+
+        <a href="/dashboard" class="nav-link active">
+            <i class="ri-home-4-line"></i>
+            <p>Home</p>
+        </a>
+
+        <a href="/account" class="nav-link">
+            <i class="ri-wallet-3-line"></i>
+            <p>Account</p>
+        </a>
+
+        <a href="/order" class="nav-link">
+            <i class="ri-shopping-cart-line"></i>
+            <p>Order</p>
+        </a>
+
+        <a href="/message" class="nav-link">
+            <span class="icon-badge-wrapper">
+                <i class="ri-message-2-line"></i>
+                <span class="active-message">3</span>
+            </span>
+            <p>Message</p>
+        </a>
+
+        <a href="/mine" class="nav-link">
+            <i class="ri-user-line"></i>
+            <p>Mine</p>
+        </a>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- funtion to add for activness  -->
+<script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const spinner = document.getElementById('loading-spinner');
+
+    navLinks.forEach(link => {
+        const currentPath = window.location.pathname;
+
+        // Add active class for the current page
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+
+        // Show spinner when a link is clicked
+        link.addEventListener('click', function (e) {
+            // Prevent the default link click behavior
+            e.preventDefault();
+
+            // Show the loading spinner
+            spinner.style.display = 'flex';
+
+            // Wait for the page to load and hide the spinner
+            const href = e.target.closest('a').getAttribute('href');
+            window.location.href = href;  // Navigate to the clicked page
+        });
+    });
+
+    // Ensure the spinner is hidden once the page is loaded
+    window.addEventListener('load', function() {
+        spinner.style.display = 'none';
+    });
+</script>
+
+
+
+
+
+
+<!-- SIDE BAR FOR SMALL SCREEN  -->
+<div class="contain-hamburger" id="hamburger-container">
+    <div class="me">
+
+        <div class="profile-summary">
+            <div class="profile-img-wrapper">
+                <img src="/images/profile.jpeg" alt="Profile" class="profile-pic">
+                <span class="active-dot"></span>
+            </div>
+            <div>
+                <h2>
+                    <%= user.name %>
+                </h2>
+                <p>
+                    <%= user.email %>
+                </p>
+            </div>
+        </div>
+
+        <!-- SLIDE-OUT MENU -->
+        <div class="hamburger" id="hamburger-menu">
+            <i class="ri-menu-3-line" id="open-menu"></i>
+        </div>
+    </div>
+</div>
+
+<div class="menu-container" id="menu-container">
+    <!-- CLOSE ICON INSIDE -->
+    <div class="close-menu" id="close-menu">
+        <i class="ri-close-line"></i>
+    </div>
+
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+    <span class="bg__blur footer__blur"></span>
+
+
+    <div class="menu">
+
+        <!-- SIDEBAR DROPDOWN -->
+        <div class="setting-item">
+            <label for="currency-sidebar">Select Currency</label>
+            <select class="currency-selector">
+              <option value="USD">USD - US Dollar</option>
+              <option value="EUR">EUR - Euro</option>
+              <option value="GBP">GBP - British Pound</option>
+              <option value="NGN">NGN - Nigerian Naira</option>
+              <option value="CAD">CAD - Canadian Dollar</option>
+              <option value="AUD">AUD - Australian Dollar</option>
+              <option value="JPY">JPY - Japanese Yen</option>
+              <option value="CNY">CNY - Chinese Yuan</option>
+              <option value="ZAR">ZAR - South African Rand</option>
+              <option value="INR">INR - Indian Rupee</option>
+              <option value="GHS">GHS - Ghanaian Cedi</option>
+              <option value="KES">KES - Kenyan Shilling</option>
+            </select>
+          </div>
+          
+
+        <a href="/message" class="on buyAccount">
+            <i class="ri-rocket-2-line"></i>
+            <span>Flash Offer</span>
+        </a>
+        <a href="/message" class="on buyAccount">
+            <i class="ri-loader-2-fill"></i>
+            <span>Spin & Win</span>
+        </a>
+        <a href="/message" class="on buyAccount">
+            <i class="ri-gift-line"></i>
+            <span>Bonus Cpn</span>
+        </a>
+        <a href="#" class="on toasts">
+            <i class="ri-wallet-line"></i>
+            <span>Pay Bill</span>
+        </a>
+        <a href="#" class="on toasts">
+            <i class="ri-stock-line"></i>
+            <span>Daily Rate</span>
+        </a>
+
+        <a href="#" class="on toasts">
+            <i class="ri-24-hours-line"></i>
+            <span>Daily Reward</span>
+        </a>
+
+    </div>
+    <data>
+        <div class="sars">
+            <a href="/select-card"><button><i class="ri-amazon-fill"></i> Sell Gift Card</button></a>
+        </div>
+    </data>
+</div>
+
+
+
+
+
+
+<!-- SIDE BAR FOR LARGE SCREEN  -->
+<div class="sidebar" id="sidebar">
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+    <span class="bg__blur footer__blur"></span>
+
+
+    <div class="logo">
+        <img src="/images/favicon.png" alt="logo" width="70%">
+    </div>
+    <div class="menu">
+        <a href="/dashboard" class="on active">
+            <i class="ri-home-4-line"></i>
+            <span>Home</span>
+        </a>
+        <a href="/mine" class="on toasts">
+            <i class="ri-user-line"></i>
+            <span>Mine</span>
+        </a>
+        <a href="/account" class="on toasts">
+            <i class="ri-wallet-line"></i>
+            <span>Account</span>
+        </a>
+        <a href="/order" class="on toasts">
+            <i class="ri-shopping-cart-line"></i>
+            <span>Orders</span>
+        </a>
+        <a href="/message" class="on buyAccount">
+            <i class="ri-message-2-line"></i>
+            <span>Message</span>
+        </a>
+        <a href="/" class="on">
+            <i class="ri-logout-box-line"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+
+    <!-- SIDEBAR DROPDOWN -->
+    <div class="setting-item">
+        <label for="currency-sidebar">Select Currency</label>
+        <select class="currency-selector">
+          <option value="USD">USD - US Dollar</option>
+          <option value="EUR">EUR - Euro</option>
+          <option value="GBP">GBP - British Pound</option>
+          <option value="NGN">NGN - Nigerian Naira</option>
+          <option value="CAD">CAD - Canadian Dollar</option>
+          <option value="AUD">AUD - Australian Dollar</option>
+          <option value="JPY">JPY - Japanese Yen</option>
+          <option value="CNY">CNY - Chinese Yuan</option>
+          <option value="ZAR">ZAR - South African Rand</option>
+          <option value="INR">INR - Indian Rupee</option>
+          <option value="GHS">GHS - Ghanaian Cedi</option>
+          <option value="KES">KES - Kenyan Shilling</option>
+        </select>
+      </div>
+      
+
+    <data>
+        <div class="sars">
+            <a href="/select-card"><button><i class="ri-amazon-fill"></i> Sell Gift Card</button></a>
+        </div>
+    </data>
+
+</div>
+
+
+<!-- Arrow to toggle sidebar -->
+<div class="toggle-sidebar" id="toggle-btn">
+    <i class="ri-menu-3-line"></i>
+</div>

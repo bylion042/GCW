@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/active-user.css">
+    <link rel="stylesheet" href="/css/offers.css">
+    <link rel="stylesheet" href="/css/order.css">
+</head>
+
+<body>
+    <div class="container">
+        <%- include ('partials/sidebar') %>
+        
+
+            <!-- Main content -->
+            <main class="main-content">
+
+                <div class="order">
+                    <img src="/images/not found.png" alt="no data">
+
+
+                    <div class="data">
+                        <h1>No data here yet.</h1>
+                        <p>Once you’ve sold any gift cards, they will appear in this section. Here, you can track your sold cards, view transaction details, and manage your gift card sales.</p>
+                    </div>
+                </div>
+
+            </main>
+
+
+            <!-- INCLUDE BOT AND DRAG ROCKET  -->
+            <%- include('partials/bot') %>
+    </div>
+
+    
+
+
+    <!-- FOR MY MANIFEST  -->
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- <script src="https://kit.fontawesome.com/b3fa93e021.js" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

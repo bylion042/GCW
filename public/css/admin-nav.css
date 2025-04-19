@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: #696fdd;
+    --secondary-color-dark: #a3a8f0;
+    --text-light: #b7b9bc;
+    --white: #ffffff;
+    --max-width: 1300px;
+    --background-gradient: linear-gradient(135deg,
+            rgb(186, 190, 253) 0%,
+            rgb(66, 71, 158) 100%);
+    --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+
+
+.small-screen-nav{
+    display: none;
+}
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+
+   /* Small Screen Navigation */
+   .small-screen-nav {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color-light);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.35);
+    padding: 5px 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* Layout */
+.link-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Nav Link */
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:    5px;
+    transition: all 0.3s ease;
+    padding: 5px 12px;
+    border-radius: 10px;
+    position: relative;
+    background: transparent;
+    backdrop-filter: blur(4px);
+}
+
+/* Icons */
+.nav-link i {
+    font-size: 22px;
+    transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+/* Label */
+.nav-link p {
+    font-size: 11px;
+    font-weight: 500;
+    color: #aaa;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+/* Hover Effects */
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px);
+}
+
+.nav-link:hover i {
+    color: var(--secondary-color-dark);
+}
+
+/* ✅ Active State – Icon Only */
+.nav-link.active {
+    background: transparent;
+    transform: none;
+}
+
+.nav-link.active i {
+    background: var(--background-gradient);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(186, 190, 253, 0.4);
+    animation: bounceActive 0.3s ease;
+}
+
+
+.nav-link.active p {
+    color: var(--text-light);
+}
+
+/* Optional bounce animation */
+@keyframes bounceActive {
+    0% {
+        transform: scale(0.9);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/* 🔔 Badge Wrapper */
+.icon-badge-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Notification Badge */
+.active-message {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    background: #ff5c5c;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 92, 92, 0.7);
+    animation: pulseBadge 1.2s infinite ease-in-out;
+    z-index: 10;
+}
+
+
+/* Continuous zoom in and out animation */
+@keyframes pulseBadge {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.9;
+    }
+}
+
+}

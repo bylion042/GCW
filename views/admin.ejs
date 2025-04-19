@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/admin-nav.css">
+</head>
+
+<body>
+
+    <!-- Admin Panel Content -->
+    <div class="admin-content" id="adminContent">
+
+        <div class="card-list">
+            <h3 class="section-title">All Gift Cards</h3>
+              
+            <!-- <h3 class="section-title">All Gift Cards</h3> -->
+
+            <div class="card-container">
+                <% if (giftCards.length===0) { %>
+                    <div class="no-data">No gift cards available.</div>
+                    <% } else { %>
+                        <% giftCards.forEach((giftCard, index)=> { %> <!-- Added 'index' for numbering -->
+                            <div class="gift-card" data-id="<%= giftCard._id %>"
+                                class="<%= new Date(giftCard.createdAt) > new Date() - 3600000 ? 'new-card' : '' %>">
+                                <div class="card-header">
+                                    <div class="card-type">
+                                        <%= giftCard.cardType %>
+                                    </div>
+                                    <div class="card-brand">
+                                        <%= giftCard.cardBrand %>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Numbering for Gift Cards -->
+                                    <div class="card-number">
+                                        <span>Card #<%= index + 1 %></span>
+                                    </div>
+                                    <div class="card-detail">
+                                        <span class="label">Currency:</span><span class="value">
+                                            <%= giftCard.currency %>
+                                        </span>
+                                    </div>
+                                    <div class="card-detail">
+                                        <span class="label">Amount:</span><span class="value">
+                                            <%= giftCard.amount %>
+                                        </span>
+                                    </div>
+                                    <div class="card-detail">
+                                        <span class="label">Code:</span><span class="value">
+                                            <%= giftCard.code %>
+                                        </span>
+                                    </div>
+                                    <div class="card-images">
+                                        <% giftCard.imagePaths.forEach(imagePath=> { %>
+                                            <img src="<%= imagePath %>" alt="Gift Card Image"
+                                                onclick="openModal('<%= imagePath %>')">
+                                            <% }) %>
+                                    </div>
+
+                                    <div class="btn-contain">
+                                        <!-- Message User Button -->
+                                        <button class="message-user-btn"
+                                            onclick="messageUser('<%= giftCard.userId %>')">
+                                            Message User
+                                        </button>
+
+                                        <!-- 🔥 Delete Button -->
+                                        <button class="delete-btn" onclick="deleteCard('<%= giftCard._id %>')">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
+                                <% } %>
+            </div>
+
+            <!-- Image Modal -->
+            <div id="imageModal" class="image-modal">
+                <span class="close-btn" id="closeModal">&times;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+
+        </div>
+
+
+        <%- include ('partials/admin-nav') %>
+
+    </div>
+
+
+<!-- FOR MY MANIFEST  -->
+<script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/active-user.css">
+    <link rel="stylesheet" href="/css/offers.css">
+    <link rel="stylesheet" href="/css/account.css">
+    <link rel="stylesheet" href="/css/message.css">
+</head>
+
+<body>
+    <div class="container">
+        <%- include('partials/sidebar') %>
+
+            <!-- Main content -->
+            <main class="main-content">
+                <div class="centered-content">
+                    <h2>Welcome "<%= user.name %>"</h2>
+                    <p>Your journey starts here.</p>
+                </div>
+
+                <div class="message">
+                    <div class="message-container">
+                        <h2>GCW Notifications</h2>
+                        <div class="notification-list">
+
+                            <!-- MEssage from the admin -->
+                            <div class="notification" id="messageBox"
+                                onclick="showMessage('Dear <%= user.name %>, We encountered an issue with the gift card you submitted. It appears that the code is either incorrect or has already been used. We kindly ask that you resubmit your gift card details, ensuring the code is accurate and unused, so we can proceed with your request. If you need any assistance, feel free to reach out. We’re here to help. Thank you for your understanding. Best regards, -The GCW Support Team-.', 'support')">
+                                <img src="/images/message2.jpg" alt="Support">
+                                <div class="text">
+                                    <strong>Customer Support</strong>
+                                    <p id="userMessage">Dear <%= user.name %>, We encountered an issue ...</p>
+                                </div>
+                            </div>
+
+                            <div class="notification"
+                                onclick="showMessage('Congrats!🎉<%= user.name %>, You just received a 5 Points Bonus! for joining')">
+                                <img src="/images/message4.jpg" alt="Notification">
+                                <div class="text">
+                                    <strong>Notification</strong>
+                                    <p>Congrats!🎉<%= user.name %>, You just receiv ...</p>
+                                </div>
+                            </div>
+
+
+                            <div class="notification"
+                                onclick="showMessage('🧾 Gift cards are a fast, safe way to give. Digital or physical, they let people pick what they really want. Great for any occasion, they’re safer than cash and accepted almost everywhere. Perfect for last-minute gifts or boosting loyalty, gift cards are the go-to choice in today’s shopping world.')">
+                                <img src="/images/message5.jpg" alt="Doris_001">
+                                <div class="text">
+                                    <strong>News Updates</strong>
+                                    <p>🧾 ift cards are a fast, safe way to give ...</p>
+                                </div>
+                            </div>
+
+                            <div class="notification"
+                                onclick="showMessage('Dear<%= user.name %>, 💡 Not all buyers offer the same value for your gift card. Before you hit that Sell button, always check the current rate to make sure you are getting the best deal. Some cards have higher demand and better rates than others _ taking a moment to compare can save you from losing money. A good rate means more cash in your pocket. Stay smart, check first!.')">
+                                <img src="/images/message3.jpeg" alt="Notification">
+                                <div class="text">
+                                    <strong>Information</strong>
+                                    <p>Dear<%= user.name %>, 💡 Not all buyers offer ...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <button class="close" onclick="closeModal()"><i class="ri-close-line"></i></button>
+                            <p id="modalText"></p>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+            <!-- INCLUDE BOT AND DRAG ROCKET  -->
+            <%- include('partials/bot') %>
+    </div>
+
+
+
+
+
+    <!-- FROM ADMIN TO ME (DISPLAY MESSAGE IN MESSAGE) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const show = localStorage.getItem('showUserMessage');
+            const alreadySeen = localStorage.getItem('userMessageSeen');
+
+            // If no message is set to show or the user has already seen the message, hide it
+            if (show !== 'true' && alreadySeen !== 'true') {
+                document.getElementById('messageBox').classList.add('hidden');
+            } else {
+                document.getElementById('messageBox').classList.remove('hidden');
+                localStorage.setItem('userMessageSeen', 'true');
+                localStorage.removeItem('showUserMessage');
+            }
+        });
+
+        ;
+    </script>
+
+<!-- FOR MY MANIFEST  -->
+<script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/js/message.js"></script>
+</body>
+
+</html>

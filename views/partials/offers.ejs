@@ -1,0 +1,156 @@
+<div class="offers">
+
+    <div class="header">
+        <span class="label"> <i class="ri-shield-fill"></i> 100% safe</span>
+        <span class="label"> <i class="ri-flashlight-fill"></i> Fast Trade</span>
+        <span class="label"> <i class="ri-thumb-up-fill"></i> High+Best Rate</span>
+    </div>
+
+    <div class="features">
+        <a href="#">
+            <div class="feature">
+                <img src="/images/offer8.jpg" alt="Calculator">
+                <span>Flash Offer</span>
+            </div>
+        </a>
+        <a href="/select-card">
+            <div class="feature">
+                <img src="/images/offer7.jpg" alt="Calculator">
+                <span>Sell Gift Card</span>
+            </div>
+        </a>
+        <a href="/account">
+            <div class="feature">
+                <img src="/images/offer1.jpg" alt="Flash Offers">
+                <span>Daily Rewards</span>
+            </div>
+        </a>
+        
+        <!-- Pay Bills -->
+        <a href="#" onclick="showAccessMessage('pay-message')">
+            <div class="feature">
+                <img src="/images/offer2.jpeg" alt="Pay Bills">
+                <div class="due">Due</div>
+                <span>Pay Bills</span>
+            </div>
+        </a>
+        <div id="pay-message" class="access-popup">
+            <p>Dear <%= user.name %>, This feature is not accessible until you sell at least one gift card to us.</p>
+        </div>
+
+
+        <a href="#">
+            <div class="feature">
+                <img src="/images/offer3.jpeg" alt="Fast Transaction">
+                <div class="due">Soon</div>
+                <span>Sell Crypto</span>
+            </div>
+        </a>
+        <a href="#">
+            <div class="feature">
+                <img src="/images/offer6.jpg" alt="Calculator">
+                <span>Spin & Win</span>
+            </div>
+        </a>
+        <a href="/select-card">
+            <div class="feature">
+                <img src="/images/offer9.jpeg" alt="Calculator">
+                <span>Daily Rate</span>
+            </div>
+        </a>
+
+        <!-- Bonus Points -->
+        <a href="#" onclick="showAccessMessage('bonus-message')">
+            <div class="feature">
+                <img src="/images/offer10.jpg" alt="Calculator">
+                <span>Bonus Points</span>
+            </div>
+        </a>
+        <div id="bonus-message" class="access-popup">
+            <p>
+                <%= user.name %>, head over to your account page and complete tasks to rack up points. Earn $1 for every
+                    100 points — let the grind begin!.
+            </p>
+        </div>
+
+        <a href="/account">
+            <div class="feature">
+                <img src="/images/offer12.jpg" alt="Calculator">
+                <span>Refer & Earn</span>
+            </div>
+        </a>
+        <a href="/calculator">
+            <div class="feature">
+                <img src="/images/offer4.jpg" alt="Spin & Win">
+                <span>Calculator</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="banner">
+        <span class="banner-text"><strong>Fast Transaction:</strong> Quick & Easy</span>
+        <div class="banner-slideshow">
+            <img src="/images/banner2.jpg" alt="banner">
+            <img src="/images/banner8.jpeg" alt="banner">
+            <img src="/images/banner6.jpeg" alt="banner">
+            <img src="/images/banner7.jpeg" alt="banner">
+            <img src="/images/banner9.jpeg" alt="banner">
+            <img src="/images/banner1.jpg" alt="banner">
+            <img src="/images/banner8.jpeg" alt="banner">
+            <img src="/images/banner4.jpeg" alt="banner">
+            <img src="/images/banner5.jpeg" alt="banner">
+            <img src="/images/banner9.jpeg" alt="banner">
+            <img src="/images/banner7.jpeg" alt="banner">
+            <img src="/images/banner3.png" alt="banner">
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- SHOW POP OUT MESSAGE FOR PAY BILL  -->
+<script>
+    function showAccessMessage(id) {
+        // Hide any currently visible popup
+        document.querySelectorAll('.access-popup').forEach(popup => {
+            popup.classList.remove('show');
+        });
+
+        // Show the correct popup
+        const target = document.getElementById(id);
+        if (target) {
+            target.classList.add('show');
+            setTimeout(() => {
+                target.classList.remove('show');
+            }, 6000); // Hide after 6 seconds
+        }
+    }
+</script>
+
+
+<!-- BANNER SLID  -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".banner-slideshow img");
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                if (i === index) {
+                    slide.classList.add("active");
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Init
+        showSlide(currentSlide);
+        setInterval(nextSlide, 5000);
+    });
+</script>

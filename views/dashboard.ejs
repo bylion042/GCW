@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/active-user.css">
+    <link rel="stylesheet" href="/css/offers.css">
+</head>
+
+<body>
+    <div class="container">
+        <%- include ('partials/sidebar') %>
+        
+
+            <!-- Main content -->
+            <main class="main-content">
+                <%- include ('partials/profiles') %>
+
+                    <div class="centered-content">
+                        <h2>Welcome <%= user.name %></h2>
+                        <p>Your journey starts here.</p>
+                    </div>
+
+                    <div class="contents">
+                        <%- include('partials/offers') %>
+                        <%- include('partials/active-buyers') %>
+                    </div>
+
+            </main>
+
+
+            <!-- INCLUDE BOT AND DRAG ROCKET  -->
+            <%- include('partials/bot') %>
+    </div>
+
+    
+    <!-- In your EJS or HTML -->
+    <script>
+      // Inject the logged-in user's unique identifier from your backend
+      const currentUser = "<%= user.email %>"; // Or use _id, username, etc.
+      </script>
+      
+      <!-- FOR MY MANIFEST  -->
+      <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

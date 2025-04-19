@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #35373b;
+    --secondary-color: #696fdd;
+    --secondary-color-dark: #a3a8f0;
+    --text-light: #b7b9bc;
+    --white: #ffffff;
+    --max-width: 1300px;
+    --background-gradient: linear-gradient(135deg,
+            rgb(186, 190, 253) 0%,
+            rgb(66, 71, 158) 100%);
+    --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+
+
+.offers {
+    width: 40%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+
+.features {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.features a {
+    text-decoration: none;
+}
+
+.feature {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature img {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.due {
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    background-color: #ff5c5c;
+    color: var(--white);
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 20px;
+    animation: zoomIn 1.5s ease-in-out infinite;
+    box-shadow: 0 0 6px rgba(255, 92, 92, 0.7);
+    white-space: nowrap;
+  }
+  /* Pulsing animation */
+  @keyframes zoomIn {
+    0%, 100% {
+      transform: translateY(50%) scale(1);
+    }
+    50% {
+      transform: translateY(50%) scale(1.15);
+    }
+  }
+
+  .access-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    pointer-events: none;
+    transition: all 0.4s ease;
+    z-index: 9999;
+    max-width: 320px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--secondary-color-dark);
+}
+
+.access-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.feature:hover img {
+    transform: scale(1.1);
+    border-color: var(--primary-color);
+}
+
+.feature span {
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.feature:hover span {
+    color: var(--primary-color);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.feature:hover img {
+    animation: bounce 0.4s ease-in-out;
+}
+
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    gap: 10px;
+}
+
+.banner-text {
+    font-size: 15px;
+    color: var(--text-light);
+}
+
+.banner-slideshow {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.banner-slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+.banner-slideshow img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+    .offers {
+        width: 100%;
+        gap: 2 0px;
+    }
+
+
+    .header {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 10px;
+    }
+
+    .label {
+        font-size: 11px;
+        /* color: #f0a500; */
+    }
+
+    .label i {
+        font-size: 12px;
+    }
+
+
+    .features {
+        gap: 10px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .feature img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .feature span {
+        font-size: 11px;
+    }
+
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .banner-text {
+        color: var(--white);
+        font-size: 13px;
+    }
+
+    .banner-slideshow {
+        height: 150px;
+    }
+
+    .banner img {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,99 @@
+/* Use existing CSS Variables */
+:root {
+  --primary-color: #111317;
+  --primary-color-light: #1f2125;
+  --primary-color-extra-light: #35373b;
+  --secondary-color: #696fdd;
+  --secondary-color-dark: #a3a8f0;
+  --text-light: #d1d5db;
+  --white: #ffffff;
+  --max-width: 1300px;
+  --background-gradient: linear-gradient(135deg, rgb(186, 190, 253) 0%, rgb(66, 71, 158) 100%);
+  --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and general styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--primary-color-light);  /* Use your custom primary background */
+  color: var(--text-light);  /* Use your custom text color */
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Header styles */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: var(--white);  /* Use your custom white color */
+  text-shadow: 2px 2px var(--secondary-color-dark);  /* Add subtle shadow for a pop */
+}
+
+/* Main content area */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  max-width: var(--max-width);  /* Limit width based on your max width variable */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Paragraph text */
+p {
+  font-size: 1.2em;
+  color: var(--text-light);  /* Use your custom text color */
+  margin: 10px 0;
+}
+
+/* Buttons */
+button {
+  background-color: var(--secondary-color);  /* Use your secondary color */
+  color: var(--white);  /* Use white text color */
+  font-size: 1.2em;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color-dark);  /* Darker shade on hover */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8em;
+  color: var(--text-light);  /* Use your custom text color */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+
+  main {
+    padding: 0 10px;
+  }
+}

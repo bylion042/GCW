@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/passcode.css">
+</head>
+
+<body>
+
+    <!-- Admin Login Box -->
+    <div class="login-box" id="loginBox">
+        <div class="lock-icon">
+            <i class="ri-lock-2-fill"></i>
+        </div>
+        <h3>ENTER ADMIN PASSCODE</h3>
+        <div class="input-group" id="inputGroup">
+            <input type="password" id="passcode" placeholder="Passcode">
+            <i class="ri-eye-off-line toggle-password" id="togglePassword"></i>
+        </div>
+        <button onclick="checkPass()">Unlock</button>
+    </div>
+
+
+
+    
+    <script>
+        const passInput = document.getElementById("passcode");
+        const inputGroup = document.getElementById("inputGroup");
+        const loginBox = document.getElementById("loginBox");
+        const adminContent = document.getElementById("adminContent");
+        const togglePassword = document.getElementById("togglePassword");
+
+        function checkPass() {
+            const enteredPass = passInput.value;
+
+            fetch("/check-passcode", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ passcode: enteredPass }),
+            })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.success) {
+                        loginBox.style.display = "none";
+                        adminContent.classList.add("active");
+                    } else {
+                        inputGroup.classList.add("shake");
+                        passInput.style.borderColor = "red";  // Highlight input in red on wrong passcode
+                        setTimeout(() => inputGroup.classList.remove("shake"), 300);
+                        setTimeout(() => passInput.style.borderColor = "transparent", 500); // Reset border color
+                        passInput.focus();
+                    }
+                })
+                .catch((err) => {
+                    console.error("Error checking passcode:", err);
+                });
+        }
+
+        togglePassword.addEventListener("click", () => {
+            if (passInput.type === "password") {
+                passInput.type = "text";
+                togglePassword.classList.replace("ri-eye-off-line", "ri-eye-line");
+            } else {
+                passInput.type = "password";
+                togglePassword.classList.replace("ri-eye-line", "ri-eye-off-line");
+            }
+        });
+
+        passInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") checkPass();
+        });
+
+    </script>
+</body>
+</html>

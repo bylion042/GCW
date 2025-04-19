@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Gift Card</title>
+    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/select-card.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+    <span class="bg__blur footer__blur"></span>
+
+    <div class="card-wrapper">
+        <div class="card-header">
+            <a href="/dashboard"><i class="ri-arrow-left-s-line"></i></a>
+            <span>Select Your Card, Fast & Easy!</span>
+        </div>
+
+        <!-- SIDEBAR DROPDOWN -->
+        <div class="setting-item">
+            <label for="currency-sidebar">Select Currency</label>
+            <select id="currency-sidebar">
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="NGN">NGN - Nigerian Naira</option>
+                <option value="CAD">CAD - Canadian Dollar</option>
+                <option value="AUD">AUD - Australian Dollar</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="CNY">CNY - Chinese Yuan</option>
+                <option value="ZAR">ZAR - South African Rand</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="GHS">GHS - Ghanaian Cedi</option>
+                <option value="KES">KES - Kenyan Shilling</option>
+            </select>
+        </div>
+
+        <ul class="card-list">
+            <% const getRate = (brand) => {
+                const rateObj = rates.find(r => r.brand.toLowerCase() === brand.toLowerCase());
+                return rateObj ? parseFloat(rateObj.rateUSD) : 0; 
+            }; %>
+
+            <li>
+                <img src="/images/giftcard13.jpeg" alt="Amazon" />
+                <span>Amazon</span>
+                <span class="rate balance" data-usd="<%= getRate('Amazon') %>">
+                    $<%= getRate('Amazon').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard16.jpeg" alt="Razer" />
+                <span>Razer</span>
+                <span class="rate balance" data-usd="<%= getRate('Razer') %>">
+                    $<%= getRate('Razer').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard17.jpeg" alt="Sephora" />
+                <span>Sephora</span>
+                <span class="rate balance" data-usd="<%= getRate('Sephora') %>">
+                    $<%= getRate('Sephora').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard12.jpeg" alt="Google" />
+                <span>Google</span>
+                <span class="rate balance" data-usd="<%= getRate('Google') %>">
+                    $<%= getRate('Google').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard3.jpeg" alt="Apple&iTunes" />
+                <span>Apple</span>
+                <span class="rate balance" data-usd="<%= getRate('Apple&iTunes') %>">
+                    $<%= getRate('Apple&iTunes').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard33.jpeg" alt="Apple&iTunes" />
+                <span>iTunes</span>
+                <span class="rate balance" data-usd="<%= getRate('Apple&iTunes') %>">
+                    $<%= getRate('Apple&iTunes').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard15.jpeg" alt="Footlocker" />
+                <span>Footlocker</span>
+                <span class="rate balance" data-usd="<%= getRate('Footlocker') %>">
+                    $<%= getRate('Footlocker').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard2.jpeg" alt="Steam" />
+                <span>Steam</span>
+                <span class="rate balance" data-usd="<%= getRate('Steam') %>">
+                    $<%= getRate('Steam').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard6.jpeg" alt="Nike" />
+                <span>Nike</span>
+                <span class="rate balance" data-usd="<%= getRate('Nike') %>">
+                    $<%= getRate('Nike').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard1.jpeg" alt="Xbox" />
+                <span>Xbox</span>
+                <span class="rate balance" data-usd="<%= getRate('Xbox') %>">
+                    $<%= getRate('Xbox').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard14.jpeg" alt="Walmart" />
+                <span>Walmart</span>
+                <span class="rate balance" data-usd="<%= getRate('Walmart') %>">
+                    $<%= getRate('Walmart').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard18.jpeg" alt="Vanilla" />
+                <span>Vanilla</span>
+                <span class="rate balance" data-usd="<%= getRate('Vanilla') %>">
+                    $<%= getRate('Vanilla').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard19.jpeg" alt="AMEX" />
+                <span>AMEX</span>
+                <span class="rate balance" data-usd="<%= getRate('AMEX') %>">
+                    $<%= getRate('AMEX').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard20.jpeg" alt="Mastercard" />
+                <span>Mastercard</span>
+                <span class="rate balance" data-usd="<%= getRate('Mastercard') %>">
+                    $<%= getRate('Mastercard').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard21.jpeg" alt="Nordstrom" />
+                <span>Nordstrom</span>
+                <span class="rate balance" data-usd="<%= getRate('Nordstrom') %>">
+                    $<%= getRate('Nordstrom').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard22.jpeg" alt="eBay" />
+                <span>eBay</span>
+                <span class="rate balance" data-usd="<%= getRate('eBay') %>">
+                    $<%= getRate('eBay').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard23.jpeg" alt="PayStation" />
+                <span>PayStation</span>
+                <span class="rate balance" data-usd="<%= getRate('PayStation') %>">
+                    $<%= getRate('PayStation').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard24.jpeg" alt="Netspend" />
+                <span>Netspend</span>
+                <span class="rate balance" data-usd="<%= getRate('Netspend') %>">
+                    $<%= getRate('Netspend').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard25.jpeg" alt="GameStop" />
+                <span>GameStop</span>
+                <span class="rate balance" data-usd="<%= getRate('GameStop') %>">
+                    $<%= getRate('GameStop').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard26.jpeg" alt="Paysafecard" />
+                <span>Paysafecard</span>
+                <span class="rate balance" data-usd="<%= getRate('Paysafecard') %>">
+                    $<%= getRate('Paysafecard').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard27.jpeg" alt="Moneycard" />
+                <span>Moneycard</span>
+                <span class="rate balance" data-usd="<%= getRate('Moneycard') %>">
+                    $<%= getRate('Moneycard').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard28.jpeg" alt="BestBuy" />
+                <span>BestBuy</span>
+                <span class="rate balance" data-usd="<%= getRate('BestBuy') %>">
+                    $<%= getRate('BestBuy').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard29.jpeg" alt="CVS" />
+                <span>CVS</span>
+                <span class="rate balance" data-usd="<%= getRate('CVS') %>">
+                    $<%= getRate('CVS').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard30.jpeg" alt="Roblox" />
+                <span>Roblox</span>
+                <span class="rate balance" data-usd="<%= getRate('Roblox') %>">
+                    $<%= getRate('Roblox').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard31.jpeg" alt="Macy's" />
+                <span>Macy's</span>
+                <span class="rate balance" data-usd="<%= getRate("Macy's") %>">
+                    $<%= getRate("Macy's").toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            <li>
+                <img src="/images/giftcard32.jpeg" alt="VISA" />
+                <span>VISA</span>
+                <span class="rate balance" data-usd="<%= getRate('VISA') %>">
+                    $<%= getRate('VISA').toLocaleString() %>
+                </span>
+                <a href="/sell" class="sell-btn">Sell</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+
+    <script>
+  // Inject the current user’s unique identifier (from your backend)
+  const currentUser = "<%= user.email %>"; // you can change to _id if needed
+
+  const currencySelect = document.getElementById('currency-sidebar');
+  const storageKey = `selectedCurrency-${currentUser}`;
+
+  async function updateRates() {
+    const selectedCurrency = currencySelect.value;
+
+    // Save user-specific currency choice
+    localStorage.setItem(storageKey, selectedCurrency);
+
+    // Show spinner while loading
+    document.querySelectorAll('.balance').forEach(el => {
+      el.innerHTML = `<span class="spinner"></span> converting...`;
+    });
+
+    try {
+      const response = await fetch('https://v6.exchangerate-api.com/v6/43d7d7fb9abf1529254bd3cf/latest/USD');
+      const data = await response.json();
+      const rate = data.conversion_rates[selectedCurrency];
+
+      document.querySelectorAll('.balance').forEach(el => {
+        const baseUSD = parseFloat(el.dataset.usd);
+        const converted = baseUSD * rate;
+
+        const formatted = converted.toLocaleString('en-US', {
+          style: 'currency',
+          currency: selectedCurrency,
+          minimumFractionDigits: 2,
+        });
+
+        el.innerText = formatted;
+      });
+
+    } catch (err) {
+      console.error("Conversion failed:", err);
+      document.querySelectorAll('.balance').forEach(el => {
+        el.innerText = 'Error';
+      });
+    }
+  }
+
+  // Change listener
+  currencySelect.addEventListener('change', updateRates);
+
+  // On load: get user-specific saved currency or fallback to USD
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = localStorage.getItem(storageKey) || 'USD';
+    currencySelect.value = saved;
+    updateRates();
+  });
+</script>
+
+
+
+
+<!-- FOR MY MANIFEST  -->
+<script src="/js/scripts.js"></script>
+</body>
+
+</html>

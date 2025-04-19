@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/active-user.css">
+    <link rel="stylesheet" href="/css/offers.css">
+    <link rel="stylesheet" href="/css/account.css">
+    <link rel="stylesheet" href="/css/message.css">
+    <link rel="stylesheet" href="/css/mine.css">
+    <link rel="stylesheet" href="/css/setting.css">
+</head>
+
+<body>
+    <div class="container">
+        <%- include ('partials/sidebar') %>
+
+
+            <!-- Main content -->
+            <main class="main-content">
+
+
+                <div class="mine-container">
+                    <!-- Profile Header -->
+                    <div class="mine-header">
+                        <div class="icons">
+                            <a href="/select-card"><span class="icon"><i class="ri-amazon-fill"></i></span></a>
+                            <span class="icon styled" id="open-settings"><i class="ri-settings-3-line"></i></span>
+
+                            <!-- Slide-out settings panel -->
+                            <div class="settings-panel" id="settingsPanel">
+                                <div class="settings-content">
+                                    <span class="close-settings" id="close-settings">&times;</span>
+
+                                    <!-- Your settings HTML here -->
+
+                                    <!-- BACKGROUND BLUR -->
+                                    <span class="bg__blur"></span>
+                                    <span class="bg__blur footer__blur"></span>
+
+                                    <div class="settings-header">Settings</div>
+
+                                    <div class="setting-item1">
+                                        <span class="setting-label">Chat Notification</span>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="setting-item1">
+                                        <span class="setting-label">Voice Alert</span>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="setting-item1">
+                                        <span class="setting-label">Withdrawal currency</span>
+                                        <select class="currency-select">
+                                            <option value="USD" selected>USD</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="KES">KES</option>
+                                            <option value="CAD">CAD</option>
+                                            <option value="NGN">NGN</option>
+                                            <option value="AUD">AUD</option>
+                                            <option value="GHS">GHS</option>
+                                            <option value="ZAR">ZAR</option>
+                                            <option value="GHS">INR</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="setting-item1">
+                                        <span class="setting-label">About Us</span>
+                                        <span class="about-value">1.10.21(205)</span>
+                                    </div>
+
+                                    <div class="delete-account">Delete Account</div>
+                                    <button class="logout-btn" onclick="window.location.href='/'">Logout</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="profile-pic">
+                            <img src="/images/profile.jpeg" alt="Profile Image" />
+                            <span class="edit-icon">
+                                <i class="ri-vip-crown-fill"></i>
+                            </span>
+                        </div>
+
+                        <h2 class="name">
+                            <%= user.name %>
+                        </h2>
+                        <p class="email">
+                            <%= user.email %>
+                        </p>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="stats">
+                        <div class="stat">
+                            <p class="number">0</p>
+                            <p class="label">Your Orders</p>
+                        </div>
+                        <div class="stat">
+                            <p class="number">100</p>
+                            <p class="label">Points</p>
+                        </div>
+                        <div class="stat">
+                            <p class="number">3.41k</p>
+                            <p class="label">Total Users</p>
+                        </div>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="mine-menu">
+                        <a href="/select-card">
+                            <div class="menu-item">
+                                <div class="left">
+                                    <img src="/images/offer7.jpg" alt="Collection" class="icon-img" />
+                                    <span>Sell Gift Card</span>
+                                </div>
+                                <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                            </div>
+                        </a>
+
+                        <div class="menu-item">
+                            <div class="left">
+                                <img src="/images/offer3.jpeg" alt="Travel process" class="icon-img" />
+                                <span>Sell Crypto</span>
+                            </div>
+
+                            <div class="right">
+                                <span class="badge">Coming Soon</span>
+                                <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                            </div>
+                        </div>
+
+                        <a href="/calculator">
+                            <div class="menu-item">
+                                <div class="left">
+                                    <img src="/images/offer9.jpeg" alt="My order" class="icon-img" />
+                                    <span>Daily Rate</span>
+                                </div>
+                                <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                            </div>
+                        </a>
+
+                        <a href="/calculator">
+                            <div class="menu-item">
+                                <div class="left">
+                                    <img src="/images/offer4.jpg" alt="My order" class="icon-img" />
+                                    <span>Calculator</span>
+                                </div>
+                                <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+            </main>
+
+
+            <!-- INCLUDE BOT AND DRAG ROCKET  -->
+            <%- include('partials/bot') %>
+    </div>
+
+
+    <script>
+        const openSettings = document.getElementById("open-settings");
+        const closeSettings = document.getElementById("close-settings");
+        const settingsPanel = document.getElementById("settingsPanel");
+
+        openSettings.addEventListener("click", () => {
+            settingsPanel.classList.add("open");
+        });
+
+        closeSettings.addEventListener("click", () => {
+            settingsPanel.classList.remove("open");
+        });
+
+        // Optional: click outside to close
+        document.addEventListener("click", (e) => {
+            if (!settingsPanel.contains(e.target) && !openSettings.contains(e.target)) {
+                settingsPanel.classList.remove("open");
+            }
+        });
+    </script>
+
+
+<!-- FOR MY MANIFEST  -->
+<script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

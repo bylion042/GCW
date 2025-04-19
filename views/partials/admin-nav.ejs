@@ -1,0 +1,52 @@
+<!-- ADMIN NAV -->
+<div class="small-screen-nav">
+    <div class="link-container">
+  
+      <a href="/dashboard" class="nav-link">
+        <i class="ri-home-4-line"></i>
+        <p>My Web</p>
+      </a>
+
+      <a href="#" class="nav-link">
+        <i class="ri-coin-line"></i>
+        <p>Crypto</p>
+      </a>
+  
+      <a href="/admin" class="nav-link">
+        <i class="ri-user-line"></i>
+        <p>Admin</p>
+        <% if (giftCardCount > 0) { %>
+          <span class="active-message"><%= giftCardCount %></span>
+        <% } %>
+      </a>
+      
+  
+      <a href="/update-rate" class="nav-link">
+        <i class="ri-stock-line"></i>
+        <p>Set Rate</p>
+      </a>
+
+      <a href="#" class="nav-link" onclick="location.reload();">
+          <i class="ri-loop-left-line"></i>
+        <p>Refresh</p>
+      </a>
+      
+
+    </div>
+  </div>
+  
+  <!-- Function to handle active state -->
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentPath = window.location.pathname;
+  
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      if (currentPath.startsWith(linkPath)) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  </script>
+  

@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #111317;
+    --primary-color-light: #1f2125;
+    --primary-color-extra-light: #333;
+    --secondary-color: #696fdd;
+    --secondary-color-dark: #a3a8f0;
+    --text-light: #b7b9bc;
+    --white: #ffffff;
+    --max-width: 1300px;
+    --background-gradient: linear-gradient(135deg,
+            rgb(186, 190, 253) 0%,
+            rgb(66, 71, 158) 100%);
+    --background2: linear-gradient(180deg, #d6d9fa, rgb(149, 154, 243));
+}
+
+.active-buyers{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+.gift-card-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+}
+
+.gift-card-list::-webkit-scrollbar {
+    height: 2px;
+}
+
+.gift-card-list::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+}
+
+.gift-card-list span {
+    flex: 0 0 auto;
+    color: var(--text-light);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.gift-card-list span:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* First item active */
+.gift-card-list .active {
+    background: var(--background-gradient);
+    color: #fff;
+}
+
+
+
+
+
+
+
+.offer-list-scroll {
+    max-height: calc(70vh);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+    scroll-behavior: smooth;
+}
+
+.offer-list-scroll::-webkit-scrollbar {
+    width: 2px;
+}
+
+.offer-list-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 50px;
+}
+
+.offer-card {
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  .offer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .profile-img-wrapper {
+    position: relative;
+    width: 40px;
+    height: 40px;
+  }
+   
+  .active-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 0%;
+    width: 11px;
+    height: 11px;
+    background-color: #00c853; /* Green */
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+  
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .user-info {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
+  .username {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .verified {
+    color: rgb(223, 191, 5);
+    font-size: 14px;
+  }
+  
+  .grade-info {
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .grade-info .positive {
+    color: green;
+    margin-left: 5px;
+  }
+  
+  .limits {
+    font-size: 12px;
+    color: #777;
+  }
+  
+  .offer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 0;
+  }
+  
+  .price-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .price {
+    color: black;
+  }
+  
+  .rate {
+    color: #f0a500;
+  }
+  
+  .badge {
+    background: #ddd;
+    color: #333;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+  }
+  
+  .time {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .coupon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff6e0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #ff6600;
+  }
+  
+  .coupon-badge {
+    font-weight: bold;
+  }
+  
+  .expiry {
+    color: #ff6600;
+  }
+  
+  .offer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tag {
+    background: #ddd;
+    padding: 4px 10px;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #555;
+  }
+  
+  .sell-btn {
+    background: #00c6a9;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .sell-btn:hover {
+    background: #00a38b;
+  }
+  
+
+
+
+/* LOADING SPINNER */
+.loading-spinner {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3); 
+  backdrop-filter: blur(6px); 
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner p{
+  font-weight: bold;
+  color: var(--white);
+}
+
+  .loader  {
+    animation: rotate 1s infinite;  
+    height: 50px;
+    width: 50px;
+  }
+  
+  .loader:before,
+  .loader:after {   
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 20px;  
+    width: 20px;
+  }
+  
+  .loader:before {
+    animation: ball1 1s infinite;  
+    background-color: var(--primary-color-light); /* Lighter primary color */
+    box-shadow: 30px 0 0 var(--secondary-color-dark); /* Darker secondary color */
+    margin-bottom: 10px;
+  }
+  
+  .loader:after {
+    animation: ball2 1s infinite; 
+    background-color: var(--secondary-color); /* Using secondary color */
+    box-shadow: 30px 0 0 var(--primary-color-extra-light); /* Extra light primary color */
+  }
+  
+  @keyframes rotate {
+    0% { 
+      -webkit-transform: rotate(0deg) scale(0.8); 
+      -moz-transform: rotate(0deg) scale(0.8);
+    }
+    50% { 
+      -webkit-transform: rotate(360deg) scale(1.2); 
+      -moz-transform: rotate(360deg) scale(1.2);
+    }
+    100% { 
+      -webkit-transform: rotate(720deg) scale(0.8); 
+      -moz-transform: rotate(720deg) scale(0.8);
+    }
+  }
+  
+  @keyframes ball1 {
+    0% {
+      box-shadow: 30px 0 0 var(--secondary-color-dark);
+    }
+    50% {
+      box-shadow: 0 0 0 var(--secondary-color-dark);
+      margin-bottom: 0;
+      -webkit-transform: translate(15px, 15px);
+      -moz-transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 var(--secondary-color-dark);
+      margin-bottom: 10px;
+    }
+  }
+  
+  @keyframes ball2 {
+    0% {
+      box-shadow: 30px 0 0 var(--primary-color-extra-light);
+    }
+    50% {
+      box-shadow: 0 0 0 var(--primary-color-extra-light);
+      margin-top: -20px;
+      -webkit-transform: translate(15px, 15px);
+      -moz-transform: translate(15px, 15px);
+    }
+    100% {
+      box-shadow: 30px 0 0 var(--primary-color-extra-light);
+      margin-top: 0;
+    }
+  }
+  
+
+/* rate spiner  */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #00c6a9;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 800px) {
+    .active-buyers{
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 3rem;
+    }
+    
+    .gift-card-list {
+        gap: 10px;
+    }
+    
+    .gift-card-list span {
+        color: var(--white);
+        padding: 5px 15px;
+        font-size: 12px;
+    }
+
+
+    .offer-list-scroll {
+        max-height: calc(74vh);
+        padding-right: 0px;
+        gap: 10px;
+        padding-top: 10px;
+        padding-bottom: 40px;
+    }
+
+    .offer-list-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .offer-card {
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+}
