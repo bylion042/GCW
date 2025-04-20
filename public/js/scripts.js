@@ -13,25 +13,25 @@ if ('serviceWorker' in navigator) {
 }
 
 // Add to Home Screen prompt
-// let deferredPrompt;
-// const installBtns = document.querySelectorAll('.installBtn');
+let deferredPrompt;
+const installBtns = document.querySelectorAll('.installBtn');
 
-// window.addEventListener('beforeinstallprompt', (e) => {
-//   e.preventDefault();
-//   deferredPrompt = e;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
 
-//   // Show all install buttons
-//   installBtns.forEach((btn) => {
-//     btn.style.display = 'inline-block';
+  // Show all install buttons
+  installBtns.forEach((btn) => {
+    btn.style.display = 'inline-block';
 
-//     btn.addEventListener('click', () => {
-//       btn.style.display = 'none';
-//       deferredPrompt.prompt();
-//       deferredPrompt.userChoice.then((choiceResult) => {
-//         console.log(`User response to the install prompt: ${choiceResult.outcome}`);
-//         deferredPrompt = null;
-//       });
-//     });
-//   });
-// });
+    btn.addEventListener('click', () => {
+      btn.style.display = 'none';
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        console.log(`User response to the install prompt: ${choiceResult.outcome}`);
+        deferredPrompt = null;
+      });
+    });
+  });
+});
 
