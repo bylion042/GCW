@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@realfavicongenerator/generate-favicon": "^0.4.16",
+    "@realfavicongenerator/image-adapter-node": "^0.4.16",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
     "dotenv": "^16.4.7",

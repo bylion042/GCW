@@ -6,8 +6,8 @@ self.addEventListener('install', (event) => {
           '/index',  // Assuming you are serving this from EJS routes, not index.html
           '/css/index.css',  // Path to the CSS file
           '/js/scripts.js',  // Path to the JS file
-          '/images/icon-192x192.png',  // Path to the 192x192 icon
-          '/images/icon-512x512.png'   // Path to the 512x512 icon
+          '/images/favicon-192x192.png',  // Path to the 192x192 icon
+          '/images/favicon-512x512.png'   // Path to the 512x512 icon
         ]);
       })
     );

@@ -1,0 +1,36 @@
+{
+  "name": "GCW",
+  "short_name": "GCW",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111317",
+  "theme_color": "#696fdd",
+  "description": "A platform for selling gift cards and crypto at best rate.",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/icons/screenshot-desktop.png",
+      "sizes": "1080x1440",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/icons/screenshot-mobile.png",
+      "sizes": "2560x1440",
+      "type": "image/png"
+    }
+  ]
+}

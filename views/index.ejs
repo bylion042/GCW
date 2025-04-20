@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/images/favicon1.png" type="image/png">
+    <link rel="icon" href="/images/favicon.ico" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/calculator.css" />
     <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ff6b00">
     <link rel="stylesheet" href="/css/index.css" />
     <title>Gift Card Wave</title>
 </head>
@@ -22,7 +23,7 @@
     <!-- FOR BIG SCREEN  -->
     <nav class="hide">
         <div class="nav__logo">
-            <a href="/"><img src="images/favicon.png" alt="logo" /></a>
+            <a href="/"><img src="images/logo.png" alt="logo" /></a>
         </div>
 
         <div class="nav-hold">
@@ -36,10 +37,8 @@
 
             <a href="/login"><button class="btn join__now">Login</button></a>
             <a href="/register"><button class="btn join__now">Register</button></a>
-            <button id="installBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; z-index: 1000;">
-                    Install GCW App
-                  </button> 
-        </div>      
+            <!-- <button class="installBtn btn join__now" style="display: none;">Install App</button> -->
+        </div>
     </nav>
 
 
@@ -48,7 +47,7 @@
     <!-- FOR SMALL SCREEN  -->
     <nav class="mobile-nav hide1">
         <div class="nav__logo">
-            <a href="/"><img src="images/favicon.png" alt="logo"></a>
+            <a href="/"><img src="images/logo.png" alt="logo"></a>
         </div>
 
         <!-- Hamburger Icon -->
@@ -73,14 +72,10 @@
             <div class="btn-hold">
                 <a href="/login"><button class="btn join__now">Login</button></a>
                 <a href="/register"><button class="btn join__now">Register</button></a>
-                <button id="installBtn" style="display: none; position: fixed; bottom: 20px; right: 20px; background-color: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; z-index: 1000;">
-                    Install GCW App
-                  </button>                  
+                <button class="installBtn btn join__now small-screen" style="display: none;">Install App</button>
             </div>
         </div>
     </nav>
-
-
 
 
 
@@ -101,9 +96,9 @@
             <p class="download">Download Now on:</p>
 
             <div class="download-img">
-                <img src="./images/app store.jpg" alt="app store">
-                <img src="./images/play store.jpg" alt="play store">
-                <img src="./images/web app.jpg" alt="web app" class="web-app">
+                <img src="./images/app store.jpg" alt="app store" class="installBtn">
+                <img src="./images/play store.jpg" alt="play store" class="installBtn">
+                <img src="./images/web app.jpg" alt="web app" class="web-app installBtn">
             </div>
 
             <ul class="features">
@@ -111,11 +106,13 @@
                 <li>&#10003; Best Market Rates</li>
                 <li>&#10003; Secure Transactions</li>
                 <li>&#10003; 24/7 Support</li>
-            </ul>
+            </ul> <br>
+            <button class="installBtn btn join__now install" style="display: none;">Install our App</button>
         </div>
 
         <div class="header__image">
-            <img src="./images/giftcard 4.png" alt="Gift card" />
+            <img src="./images/app.png" class="big">
+            <img src="./images/app1.png" class="small">
         </div>
     </header>
 
@@ -292,7 +289,8 @@
     <section class="rate__container" id="calculator">
         <h2 class="section__header">Card Rates & Calculator</h2>
         <p class="section__subheader">
-            Check the latest gift card rates and calculate how much your card is worth in real-time. Stay informed and make smarter trades with our up-to-date value estimator.
+            Check the latest gift card rates and calculate how much your card is worth in real-time. Stay informed and
+            make smarter trades with our up-to-date value estimator.
         </p>
         <br>
 
@@ -1257,7 +1255,7 @@
 
     <!-- ALL ABOUT WHERE TO GET US  -->
     <section class="section__container">
-        <h2 class="section__header">Create an Account</h2>
+        <h2 class="section__header">Download Our App</h2>
         <p class="section__subheader">
             Selling your gift cards & coins with Gift Card Wave is simple and straightforward.
             Just download the app or register on the website, and you'll be ready to
@@ -1265,11 +1263,10 @@
         </p> <br>
 
         <!-- <p class="tall">Trade on:</p> <br> -->
-
         <div class="download-image">
-            <img src="./images/app store.jpg" alt="app store">
-            <img src="./images/play store.jpg" alt="play store">
-            <img src="./images/web app.jpg" alt="web app" class="web-app">
+            <img src="./images/app store.jpg" alt="app store" class="installBtn">
+            <img src="./images/play store.jpg" alt="play store" class="installBtn">
+            <img src="./images/web app.jpg" alt="web app" class="web-app installBtn">
         </div>
     </section>
 
@@ -1289,9 +1286,9 @@
     <footer class="section__container footer__container">
         <span class="bg__blur"></span>
         <span class="bg__blur footer__blur"></span>
-        
+
         <div class="footer__col">
-            <div class="footer__logo"><a href="/"><img src="images/favicon.png" alt="logo" /></a></div>
+            <div class="footer__logo"><a href="/"><img src="images/logo.png" alt="logo" /></a></div>
             <p>
                 Welcome to the best gift cards trading website. We buy various gift cards like iTunes
                 Gift Card, Amazon Gift Cards, Steam Gift Cards, Google Play Gift Cards, Sephora Gift Cards and a lot
@@ -1344,12 +1341,12 @@
 
 
 
-<!-- FOR MY MANIFEST  -->
-<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/js/calculator.js"></script>
-<script src="/js/index.js"></script>
-<script src="/js/scripts.js"></script>
+    <!-- FOR MY MANIFEST  -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/calculator.js"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/scripts.js"></script>
 </body>
 
 </html>

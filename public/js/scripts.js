@@ -14,27 +14,24 @@ if ('serviceWorker' in navigator) {
 
 // Add to Home Screen prompt
 let deferredPrompt;
+const installBtns = document.querySelectorAll('.installBtn');
 
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
 
-  const installBtn = document.getElementById('installBtn');
-  if (installBtn) {
-    installBtn.style.display = 'block';
+  // Show all install buttons
+  installBtns.forEach((btn) => {
+    btn.style.display = 'inline-block';
 
-    installBtn.addEventListener('click', () => {
-      installBtn.style.display = 'none';
+    btn.addEventListener('click', () => {
+      btn.style.display = 'none';
       deferredPrompt.prompt();
-
       deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the A2HS prompt');
-        } else {
-          console.log('User dismissed the A2HS prompt');
-        }
+        console.log(`User response to the install prompt: ${choiceResult.outcome}`);
         deferredPrompt = null;
       });
     });
-  }
+  });
 });
+
