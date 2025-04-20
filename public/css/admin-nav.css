@@ -24,7 +24,46 @@
     display: none;
 }
 
+/* DRAGABLE IMAGE  */
+.draggable-image {
+    position: fixed;
+    top: 70%;
+    right: 10px;
+    transform: translate(0, -50%);
+    z-index: 1000;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.draggable-image img {
+    max-width: 120px;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.zoom-image {
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.5s ease;
+    animation: zoomInOut 2s ease-in-out infinite;
+    border-radius: 12px;
+}
+
+.zoom-image:hover {
+    transform: scale(1.12); 
+}
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1); 
+    }
+}
 
 
 
@@ -170,5 +209,19 @@
         opacity: 0.9;
     }
 }
+
+
+
+
+
+.draggable-image img {
+    max-width: 110px;
+}
+
+.draggable-image {
+    top: 80%;
+    right: 0px;
+}
+
 
 }
