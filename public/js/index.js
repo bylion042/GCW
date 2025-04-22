@@ -32,30 +32,30 @@ document.addEventListener("DOMContentLoaded", () => {
   
   
   // SWEET ALART THAT WELCOMES THE USER 
-  document.addEventListener("DOMContentLoaded", function () {
-    Swal.fire({
-      title: "Gift Card Wave",
-      html: "Before selling your gift cards, make sure to check the current rates to get the best value in return. Use our calculator to find out how much your card is worth.",
-      icon: "info",
-      showCancelButton: false,  // Remove the cancel button
-      showConfirmButton: true,
-      confirmButtonText: "Check Rate",
-      confirmButtonColor: "#3085d6",
-      width: "400px",
-      didOpen: () => {
-        document.querySelector(".swal2-title").style.fontSize = "16px";
-        document.querySelector(".swal2-title").style.lineHeight = "1.4";
-        document.querySelector(".swal2-html-container").style.fontSize = "14px";
-        document.querySelector(".swal2-html-container").style.lineHeight = "1.5";
-        document.querySelector(".swal2-confirm").style.fontSize = "13px";
-        document.querySelector(".swal2-confirm").style.padding = "8px 16px";
-      }
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "/calculator";
-      }
-    });
-  });
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   Swal.fire({
+  //     title: "Gift Card Wave",
+  //     html: "Before selling your gift cards, make sure to check the current rates to get the best value in return. Use our calculator to find out how much your card is worth.",
+  //     icon: "info",
+  //     showCancelButton: false,  // Remove the cancel button
+  //     showConfirmButton: true,
+  //     confirmButtonText: "Check Rate",
+  //     confirmButtonColor: "#3085d6",
+  //     width: "400px",
+  //     didOpen: () => {
+  //       document.querySelector(".swal2-title").style.fontSize = "16px";
+  //       document.querySelector(".swal2-title").style.lineHeight = "1.4";
+  //       document.querySelector(".swal2-html-container").style.fontSize = "14px";
+  //       document.querySelector(".swal2-html-container").style.lineHeight = "1.5";
+  //       document.querySelector(".swal2-confirm").style.fontSize = "13px";
+  //       document.querySelector(".swal2-confirm").style.padding = "8px 16px";
+  //     }
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       window.location.href = "/calculator";
+  //     }
+  //   });
+  // });
   
 
   
