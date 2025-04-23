@@ -75,7 +75,7 @@ body {
 
 
 .nav__logo img {
-  width: 100%;
+  width: 150%;
   display: flex;
 }
 
@@ -249,7 +249,7 @@ nav {
 }
 
 .header__image::before {
-  content: "O";
+  content: "G";
   position: absolute;
   top: 0;
   left: 50%;
@@ -263,7 +263,7 @@ nav {
 }
 
 .header__image img {
-  max-width: 600px;
+  max-width: 300px;
   display: flex;
     align-items: center;
   margin: auto;
@@ -889,7 +889,7 @@ nav {
 }
 
 .footer__logo img{
-  width: 60%;
+  width: 100%;
   margin-bottom: 2rem;
 }
 
@@ -980,7 +980,7 @@ nav {
 
 /* Logo */
 .nav__logo img {
-  max-width: 70px;
+  max-width: 150px;
 }
 
 /* Hamburger styles */
@@ -1063,6 +1063,7 @@ nav {
   cursor: pointer;
   width: 100%;
 }
+
 .btn.install {
   padding: 10px;
   font-weight: 600;
@@ -1463,7 +1464,7 @@ nav {
   }
 
   .footer__logo img{
-    width: 40%;
+    width: 60%;
     margin-bottom: 0rem;
   }
 
