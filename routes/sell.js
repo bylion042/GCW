@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const GiftCard = require('../models/GiftCard');
 const upload = require('../config/multerConfig'); // correctly imported
-
+const sendGiftCardNotification = require('../utils/sendEmail'); // ✅ Added line
 
 router.post('/sell', upload.array('images', 2), async (req, res) => {
   try {
@@ -18,13 +18,12 @@ router.post('/sell', upload.array('images', 2), async (req, res) => {
     });
 
     await newCard.save();
+    await sendGiftCardNotification(); // ✅ Email notification after save
     res.render('sell', { status: 'success' }); // Pass status to EJS
   } catch (err) {
     console.error('Error saving gift card:', err);
     res.status(500).send('Server Error');
   }
 });
-
-
 
 module.exports = router;
