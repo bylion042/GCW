@@ -218,8 +218,6 @@ setInterval(updateTime, 60000);
 
 
 
-//   ALL ABOUT  ACTIVE USER 
-
 // TO ADD ACTIVE VIA GIFT CARDS 
 document.addEventListener("DOMContentLoaded", function () {
     const giftCards = document.querySelectorAll(".gift-card-list span");
@@ -375,6 +373,6 @@ const balanceUSD = 0.02; // base balance in USD
 
   // On load: use stored currency or default to USD
   window.addEventListener('DOMContentLoaded', () => {
-    const savedCurrency = localStorage.getItem(storageKey) || 'USD';
+    const savedCurrency = localStorage.getItem(storageKey) || 'NGN';
     updateBalanceCurrency(savedCurrency);
   });

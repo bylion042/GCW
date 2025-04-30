@@ -6,12 +6,12 @@
             <div class="setting-item">
                 <!-- <label for="currency-select">Select Currency</label> -->
                 <select class="currency-select" id="currency-select">
-                    <option value="USD" selected>USD</option>
+                    <option value="NGN" selected>NGN</option>
+                    <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="GBP">GBP</option>
                     <option value="KES">KES</option>
                     <option value="CAD">CAD</option>
-                    <option value="NGN">NGN</option>
                     <option value="AUD">AUD</option>
                     <option value="GHS">GHS</option>
                     <option value="ZAR">ZAR</option>
@@ -175,11 +175,14 @@
     });
   
     window.addEventListener('load', function () {
-        const savedCurrency = localStorage.getItem(`selectedCurrency-${currentUser}`);
-        if (savedCurrency) {
-            currencySelect.value = savedCurrency;
-        }
-        updateBalanceCurrency();
-    });
+    const savedCurrency = localStorage.getItem(`selectedCurrency-${currentUser}`);
+    if (savedCurrency) {
+        currencySelect.value = savedCurrency;
+    } else {
+        currencySelect.value = 'NGN'; // Set NGN as default if no saved currency
+    }
+    updateBalanceCurrency();
+});
+
   </script>
   

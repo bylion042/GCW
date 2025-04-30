@@ -4,22 +4,22 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'codelab042@gmail.com',
-    pass: 'oioe dhfm osop xsfs' 
+    user: 'Ifeaborkosi@gmail.com',
+    pass: 'gffa wjgq dtzq ixsi' 
   }
 });
 
 const sendGiftCardNotification = async () => {
     await transporter.sendMail({
-      from: '"Gift Castle" <codelab042@gmail.com>',
-      to: 'codelab042@gmail.com',
+      from: '"Gift Castle" <Ifeaborkosi@gmail.com>',
+      to: 'Ifeaborkosi@gmail.com',
       subject: '📩 New Gift Card Submission',
       html: `
         <div style="background-color: #f4f4f9; color: #333333; padding: 20px; font-family: Arial, sans-serif; border-radius: 10px; max-width: 600px; margin: 0 auto;">
           <div style="text-align: center;">
-            <img src="https://i.postimg.cc/RhNmQcyv/logo.png" alt="Gift Castle Logo" style="width: 120px; margin-bottom: 20px;" />
+            <img src="https://i.postimg.cc/1RdVy7gs/favicon-96x96.png" alt="Gift Castle Logo" style="width: 120px; margin-bottom: 20px;" />
           </div>
-          <h2 style="color: #696fdd;">🎁 Gift Castle Notification</h2>
+          <h2 style="color: #696fdd;">🎁 Gift Card Wave Notification</h2>
           <p style="color: #444444;">Hey Admin,</p>
           <p style="color: #444444;">A <strong>new gift card</strong> has just been submitted on the platform.</p>
           <hr style="border: 1px solid #d1d5db;">

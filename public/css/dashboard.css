@@ -755,7 +755,6 @@ data {
         background-position: center;
         background-repeat: no-repeat;
         background: var(--background-gradient);
-        /* box-shadow: 0 4px 12px rgba(143, 150, 247, 0.4); */
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
         border-radius: 0;
         position: fixed;

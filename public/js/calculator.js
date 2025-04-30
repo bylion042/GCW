@@ -39,11 +39,11 @@
   // Change listener
   currencySelect.addEventListener('change', updateRates);
 
-  // On page load: force default to USD
-  window.addEventListener('DOMContentLoaded', () => {
-    currencySelect.value = 'USD'; // Set dropdown to USD
-    updateRates(); // Run conversion immediately
-  });
+ // On page load: force default to NGN
+window.addEventListener('DOMContentLoaded', () => {
+  currencySelect.value = 'NGN'; // Set dropdown to NGN
+  updateRates(); // Run conversion immediately
+});
 
 
 
