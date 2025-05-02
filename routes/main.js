@@ -109,18 +109,35 @@ router.get('/mine', (req, res) => {
 
 
 // SELL Page (Protected)
-router.get('/sell', (req, res) => {
-    // Check if user is logged in (based on session)
-    if (!req.session.user) {
-        return res.redirect('/login'); // Redirect to login if user is not logged in
-    }
+router.get('/sell', async (req, res) => {
+  // Check if user is logged in (based on session)
+  if (!req.session.user) {
+    return res.redirect('/login'); // Redirect to login if user is not logged in
+  }
+
+  try {
+    // Fetch gift card rates from the database
+    const rates = await GiftCardRate.find({});
+
+    // Check if rates are being fetched correctly
+    console.log(rates); // Log the fetched rates for debugging
 
     // Render sell page with the user session and any query parameters (like status)
     res.render('sell', { 
-        user: req.session.user, 
-        status: req.query.status  // Pass the status from the query parameters (success/failure)
+      user: req.session.user, 
+      rates: rates,  // Ensure the rates are passed correctly
+      status: req.query.status 
     });
+  } catch (err) {
+    console.error("Error fetching gift card rates:", err);
+    res.status(500).send("Server error while fetching rates.");
+  }
 });
+
+
+
+
+
 
 // SELECT CARD Page (Protected)
 router.get('/select-card', async (req, res) => {

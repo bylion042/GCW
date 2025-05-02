@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const GiftCard = require('../models/GiftCard');
-const upload = require('../config/multerConfig'); // correctly imported
-const sendGiftCardNotification = require('../utils/sendEmail'); // ✅ Added line
+const upload = require('../config/multerConfig'); 
+const sendGiftCardNotification = require('../utils/sendEmail'); 
+const GiftCardRate = require('../models/GiftCardRate')
 
 router.post('/sell', upload.array('images', 2), async (req, res) => {
   try {
@@ -18,8 +19,17 @@ router.post('/sell', upload.array('images', 2), async (req, res) => {
     });
 
     await newCard.save();
-    await sendGiftCardNotification(); // ✅ Email notification after save
-    res.render('sell', { status: 'success' }); // Pass status to EJS
+    await sendGiftCardNotification();
+
+    // 🔥 Fetch rates so you can render them again
+    const rates = await GiftCardRate.find({});
+
+    res.render('sell', {
+      user: req.session.user,
+      rates: rates,  // ✔️ Now 'rates' is defined again
+      status: 'success'
+    });
+
   } catch (err) {
     console.error('Error saving gift card:', err);
     res.status(500).send('Server Error');
