@@ -10,7 +10,7 @@
     });
 
     try {
-      const response = await fetch('https://v6.exchangerate-api.com/v6/43d7d7fb9abf1529254bd3cf/latest/USD');
+      const response = await fetch('https://v6.exchangerate-api.com/v6/30bc0d29cfe5dd3481b06245/latest/USD');
       const data = await response.json();
       const rate = data.conversion_rates[selectedCurrency];
 
@@ -67,7 +67,7 @@ async function updateResult(targetCurrency, usdAmount) {
   resultEl.innerHTML = `<span class="spinner"></span> Converting...`;
 
   try {
-    const response = await fetch('https://v6.exchangerate-api.com/v6/43d7d7fb9abf1529254bd3cf/latest/USD');
+    const response = await fetch('https://v6.exchangerate-api.com/v6/30bc0d29cfe5dd3481b06245/latest/USD');
     const data = await response.json();
     const conversionRate = data.conversion_rates[targetCurrency];
 
