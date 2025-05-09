@@ -7,6 +7,7 @@ const GiftCardSchema = new mongoose.Schema({
   amount: Number,
   code: String,
   imagePaths: [String],
+  country: String,
   createdAt: {
     type: Date,
     default: Date.now

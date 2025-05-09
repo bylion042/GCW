@@ -36,6 +36,21 @@
         </div>
 
 
+         <label>Your Currency</label>
+        <select name="currency" id="currency" required>
+          <option selected>NGN</option>
+          <option>USD</option>
+          <option>EUR</option>
+          <option>GBP</option>
+          <option>CAD</option>
+          <option>AUD</option>
+          <option>GHS</option>
+          <option>KES</option>
+          <option>ZAR</option>
+          <option>INR</option>
+        </select>
+
+
         <div class="section">
           <label>Select Gift Card</label>
           <select name="cardBrand" id="cardBrand" required>
@@ -52,22 +67,30 @@
         </div>
 
 
-
-
-
-        <label>Select Currency</label>
-        <select name="currency" id="currency" required>
-          <option selected>NGN</option>
-          <option>USD</option>
-          <option>EUR</option>
-          <option>GBP</option>
-          <option>CAD</option>
-          <option>AUD</option>
-          <option>GHS</option>
-          <option>KES</option>
-          <option>ZAR</option>
-          <option>INR</option>
-        </select>
+<label>Select Your Country</label>
+<select name="country" required>
+  <option selected>NGN - Nigeria</option>
+  <option>USD - United States</option>
+  <option>EUR - Eurozone</option>
+  <option>GBP - United Kingdom</option>
+  <option>CAD - Canada</option>
+  <option>AUD - Australia</option>
+  <option>GHS - Ghana</option>
+  <option>KES - Kenya</option>
+  <option>ZAR - South Africa</option>
+  <option>INR - India</option>
+  <option>BRL - Brazil</option>
+  <option>MXN - Mexico</option>
+  <option>PHP - Philippines</option>
+  <option>TRY - Turkey</option>
+  <option>EGP - Egypt</option>
+  <option>MYR - Malaysia</option>
+  <option>PKR - Pakistan</option>
+  <option>IDR - Indonesia</option>
+  <option>THB - Thailand</option>
+  <option>JPY - Japan</option>
+  <option>CNY - China</option>
+</select>
 
 
         <div class="section">
@@ -203,11 +226,6 @@
           fetchConversionRates();
         });
       </script>
-
-
-
-
-
 
 
 

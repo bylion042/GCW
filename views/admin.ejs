@@ -20,7 +20,7 @@
         <div class="card-list">
             <h3 class="section-title">All Gift Cards</h3>
             <!-- <button class="installBtn btn join__now" style="display: none;">Install App</button> -->
-              
+
             <!-- <h3 class="section-title">All Gift Cards</h3> -->
 
             <div class="card-container">
@@ -58,6 +58,12 @@
                                             <%= giftCard.code %>
                                         </span>
                                     </div>
+                                    <div class="card-detail">
+                                        <span class="label">Country:</span><span class="value">
+                                            <%= giftCard.country %>
+                                        </span>
+                                    </div>
+
                                     <div class="card-images">
                                         <% giftCard.imagePaths.forEach(imagePath=> { %>
                                             <img src="<%= imagePath %>" alt="Gift Card Image"
@@ -97,8 +103,8 @@
     </div>
 
 
-<!-- FOR MY MANIFEST  -->
-<script src="/js/scripts.js"></script>
+    <!-- FOR MY MANIFEST  -->
+    <script src="/js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/admin.js"></script>
     <script src="/js/scripts.js"></script>

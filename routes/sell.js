@@ -15,6 +15,7 @@ router.post('/sell', upload.array('images', 2), async (req, res) => {
       currency: req.body.currency,
       amount: req.body.amount,
       code: req.body.code,
+      country: req.body.country,
       imagePaths
     });
 
